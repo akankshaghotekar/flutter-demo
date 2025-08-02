@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               // Handle button press
             },
-            child: const Text('Press Me'),
+            child: const Text('Click Me'),
           ),
         ],
       ),
