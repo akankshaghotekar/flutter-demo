@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/common_widget/user_input.dart';
 import 'package:flutter_application_1/utils/const/color.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -36,21 +37,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 300,
                 child: Column(
                   children: [
-                    TextField(
-                      controller: nameText,
-                      decoration: InputDecoration(
-                        hintText: "Enter Username",
-                        hintStyle: TextStyle(
-                          color: grey,
-                          fontSize: 14
-                        )
-                      ),
-                    )
+                    UserInput(controller: nameText, hintText: 'Enter username'),
+                    UserInput(controller: emailText, hintText: 'Enter email'),
+                    UserInput(
+                      controller: passwordText,
+                      hintText: 'Enter Password',
+                      obscureText: true,
+                    ),
                   ],
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
