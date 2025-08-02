@@ -9,6 +9,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController nameText = TextEditingController();
+  TextEditingController emailText = TextEditingController();
+  TextEditingController passwordText = TextEditingController();
+
+  GlobalKey formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,18 +28,29 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Center(
-            child: Text(
-              'Welcome to the Home Screen!',
-              style: TextStyle(color: black),
+          Form(
+            key: formKey,
+            child: Center(
+              child: Container(
+                height: 500,
+                width: 300,
+                child: Column(
+                  children: [
+                    TextField(
+                      controller: nameText,
+                      decoration: InputDecoration(
+                        hintText: "Enter Username",
+                        hintStyle: TextStyle(
+                          color: grey,
+                          fontSize: 14
+                        )
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              // Handle button press
-            },
-            child: const Text('Click Me'),
-          ),
+          )
         ],
       ),
     );
