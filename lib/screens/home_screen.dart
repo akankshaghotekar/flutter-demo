@@ -29,6 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(color: black),
             ),
           ),
+          ElevatedButton(
+            onPressed: () {
+              // Handle button press
+            },
+            child: const Text('Press Me'),
+          ),
         ],
       ),
     );
